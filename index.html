@@ -22,6 +22,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             padding: 20px;
+            overflow: hidden;
         }
 
         .priority-badge {
@@ -50,6 +51,7 @@
             display: flex;
             gap: 10px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .reply,
@@ -74,6 +76,7 @@
             padding: 15px;
             background-color: #f1f1f1;
             border-radius: 15px;
+            overflow-wrap: break-word;
         }
 
         .chat-bubble::after {
@@ -125,11 +128,18 @@
             color: #555;
         }
 
+        .about-card {
+            background-color: #eaf2f8;
+            padding: 30px;
+            border-left: 8px solid #2980b9;
+        }
+
         .action-item-card {
             border-left: 8px solid #ff5733;
             background-color: #fef6e4;
             color: #333;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow-wrap: break-word;
         }
 
         .action-item-card h4 {
@@ -139,6 +149,25 @@
 
         .action-item-card p {
             font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .email-card,
+            .conversation-card,
+            .calendar-card,
+            .about-card,
+            .action-item-card {
+                padding: 15px;
+            }
+
+            .action-btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .chat-bubble {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -168,7 +197,7 @@
         <div class="tab-content">
             <!-- Emails Tab -->
             <div class="tab-pane fade" id="emails">
-                <h1 class="mt-4 mb-4">Unread Emails</h1>
+                <h1 class="mt-4 mb-4">Sammy - Emails</h1>
 
                 <!-- Example email cards -->
                 <div class="email-card" id="email-1">
@@ -216,7 +245,7 @@
                 <h1 class="mt-4 mb-4">Conversations Demo</h1>
 
                 <div class="conversation-card">
-                    <h4>Conversation with Emily and Rajesh</h4>
+                    <h4>Conversation between Emily and Rajesh</h4>
                     <div class="chat-bubble">
                         <strong>Emily:</strong> Hey Rajesh, did you check the latest update on the project?
                     </div>
@@ -224,7 +253,7 @@
                         <strong>Rajesh:</strong> Yes, I saw it. It looks great, but we need to make some adjustments.
                     </div>
                     <div class="chat-bubble">
-                        <strong>Me:</strong> Absolutely all! Let’s schedule a meeting to discuss it further.
+                        <strong>Emily:</strong> Absolutely! Let’s schedule a meeting to discuss it further.
                     </div>
                     <div class="button-group">
                         <button class="action-btn" onclick="summarizeConversation('1')">Summarize Conversation</button>
@@ -252,12 +281,12 @@
                 </div>
 
                 <div class="conversation-card">
-                    <h4>Conversation with John</h4>
+                    <h4>Conversation between John and Priya</h4>
                     <div class="chat-bubble">
-                        <strong>John:</strong> Hi there, I need help with the analysis report. Can we discuss it?
+                        <strong>John:</strong> Hi Priya, I need help with the analysis report. Can we discuss it?
                     </div>
                     <div class="chat-bubble user">
-                        <strong>Me:</strong> Sure, John. Let's connect at 2 PM today. I can help you out then.
+                        <strong>Priya:</strong> Sure, John. Let's connect at 2 PM today. I can help you out then.
                     </div>
                     <div class="button-group">
                         <button class="action-btn" onclick="summarizeConversation('2')">Summarize Conversation</button>
